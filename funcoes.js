@@ -93,3 +93,28 @@ function calculoSalario(){
         document.getElementById('result').innerHTML = `R$ ${total.toFixed(2)}`
     }
 }
+
+//-----------------------------------------------------------------------------------
+
+function calcularImc(){
+    let peso = parseFloat(document.getElementById('peso').value)
+    let altura = parseFloat(document.getElementById('altura').value)
+    let imc = (peso / (Math.pow(altura,2))).toFixed(1)
+
+
+    if(imc < 16.9){
+        document.getElementById('imc').innerHTML = `Muito abaixo do peso com IMC de: ${imc}`
+    }else if(imc >= 17, imc <=18.4){
+        document.getElementById('imc').innerHTML = `Abaixo do peso com IMC de: ${imc}`
+    }else if(imc >= 18.5, imc <= 24.9){
+        document.getElementById('imc').innerHTML = `Peso Normal com IMC de: ${imc}`
+    }else if(imc >= 25, imc <= 29.9){
+        document.getElementById('imc').innerHTML = `Acima do peso com IMC de: ${imc}`
+    }else if(imc >= 30, imc <= 34.9){
+        document.getElementById('imc').innerHTML = `Obesidade grau I com IMC de: ${imc}`
+    }else if(imc >= 35, imc <= 40){
+        document.getElementById('imc').innerHTML = `Obesidade grau II com IMC de: ${imc}`
+    }else if(imc > 40){
+        document.getElementById('imc').innerHTML = `Obesidade grau III com IMC de: ${imc}`
+    }
+}
